@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Display Project</title>
+    <style>
+      .main-c {
+        width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 50px auto;
+      }
+      .moon1 {
+        margin-top: 30px;
+        margin-left: 55px;
+        height: 200px;
+        position: absolute;
+        animation: rise 10s 10s linear infinite ;
+      }
+      @keyframes skyColor {
+            0% {
+                background: linear-gradient(to top, #ff7e5f, #feb47b);
+            }
+            50% {
+                background: linear-gradient(to top, #ff416c, #ff4b2b);
+            }
+            100% {
+                background: linear-gradient(to top, #001f3f, #0074D9);
+            }
+        }
+
+        @keyframes sink {
+            0% {
+                bottom: 20%;
+            }
+            100% {
+                bottom: -100px; /* Adjust to create the sinking effect */
+            }
+        }
+
+        @keyframes rise {
+            0% {
+                bottom: -100px; 
+                opacity: 0; 
+            }
+            50% {
+                opacity: 1; /
+            }
+            100% {
+                bottom: 60%; 
+            }
+        }
+
+      .main-1 {
+        margin-left: 500px;
+      }
+      .bt1 {
+        width: 100px;
+        height: 30px;
+        margin: 30px;
+        margin-top: 10px;
+        cursor: pointer;
+        background-color: red;
+        border: 2px double #ffff33;
+        color: black;
+        font-size: 20px;
+        border-radius: 10px;
+      }
+      .bt2 {
+        width: 100px;
+        height: 30px;
+        margin: 30px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        background-color: green;
+        border: none;
+        border: 1px double #4d4dff;
+        border-radius: 5px;
+      }
+      .bt3 {
+        width: 100px;
+        height: 30px;
+        margin: 30px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 20px;
+        background-color: pink;
+        border: none;
+        border: 1px double #009933;
+        border-radius: 5px;
+      }
+      
+
+      .cloud {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      }
+
+      .cloud1 {
+        width: 120px;
+        height: 60px;
+        top: 10%;
+        left: -150px;
+        animation: drift 15s linear infinite;
+      }
+
+      .cloud2 {
+        width: 100px;
+        height: 50px;
+        top: 20%;
+        left: -200px;
+        animation: drift 10s linear infinite;
+      }
+
+      .cloud3 {
+        width: 150px;
+        height: 70px;
+        top: 15%;
+        left: -250px;
+        animation: drift 12s linear infinite;
+      }
+
+       @keyframes sink {
+        0% {
+          bottom: 20%;
+        }
+        100% {
+          bottom: -100px;
+        }
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(100vw);
+        }
+      }
+      
+      body {
+        margin: 0;
+
+        justify-content: center;
+        align-items: center;
+        animation: sunset 15s infinite alternate;
+      }
+      @keyframes sunset {
+        0% {
+          background: linear-gradient(to top, #ff7e5f, #feb47b);
+        }
+        25% {
+          background: linear-gradient(to top, #ff6a00, #ee0979);
+        }
+        50% {
+          background: linear-gradient(to top, #ff416c, #ff4b2b);
+        }
+        75% {
+          background: linear-gradient(to top, #6a11cb, #2575fc);
+        }
+        100% {
+          background: linear-gradient(to top, #001f3f, #0074d9);
+        }
+      } 
+.co{
+         width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 50px auto;
+}
+.c{
+  margin-left: 500px;
+}
+.act{
+  width: 300px;
+        height: 300px;
+        border: 1px solid black;
+        border-radius: 50%;
+        margin: 50px auto;
+}
+.main{
+  margin-left: 500px;
+}
+.seasson2{
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+
+}
+    </style>
+  </head>
+  <body id="b">
+    <div class="main-c" id="m">
+      <img src="moonsoon.jpeg" alt="" id="moon" class="moon1" />
+    </div>
+    <div class="main-1">
+      <button type="button" id="btn1" class="bt1" onclick="sunset(1)">
+        Summer
+      </button>
+      <button type="button" id="btn2" class="bt2" onclick="sunset(2)">
+        Wintter
+      </button>
+      <button type="button" id="btn3" class="bt3" onclick="sunset(3)">
+        mansoon
+      </button>
+    </div>
+    <div class="sun"></div>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+    <!-- 2nd question -->
+    <div class="co" id="mo">
+     
+    </div>
+    <div class="c">
+    <button type="button" id="btn4" class="bt1" onclick="color(1)">
+      Red
+    </button>
+    <button type="button" id="btn5" class="bt2" onclick="color(2)">
+      green
+    </button>
+    <button type="button" id="btn6" class="bt3" onclick="color(3)">
+      pink
+    </button>
+  </div>
+  <!-- 3rd question -->
+  <div class="act" id="actt">
+    <img src="pro.webp" alt="" class="seasson2" id="a">
+
+  </div>
+  <div class="main">
+  <button type="button" id="btn4" class="bt1" onclick="actress(1)">
+    Nayra
+  </button>
+  <button type="button" id="btn5" class="bt2" onclick="actress(2)">
+    professor
+  </button>
+  <button type="button" id="btn6" class="bt3" onclick="actress(3)">
+    Heasangi
+  </button>
+</div>
+  </body>
+  <script>
+    let mood = document.getElementById("moon");
+    let B = document.getElementById("b");
+    let M = document.getElementById("m");
+
+    function sunset(season) {
+      if (season == 1) {
+        mood.src = "sun-removebg-preview.png ";
+        B.style.background = "#ff9900";
+        M.style.background = "#ff9900";
+      } else if (season == 2) {
+        mood.src = "winter.png";
+        B.style.background = "#66ccff";
+        M.style.background = "#cce6ff";
+      } else if (season == 3) {
+        mood.src = "moon.png";
+        B.style.background = "#80ff80";
+        M.style.background = "#99ffd6";
+      }
+    }
+    let dc = document.getElementById('mo')
+    function color(season) {
+      if (season == 1) {
+        dc.style.backgroundColor = 'red'
+      }else if(season==2){
+        dc.style.backgroundColor = 'green'
+      }else if(season==3){
+        dc.style.backgroundColor = 'pink'
+    }
+  }
+  let hero = document.getElementById('a')
+  function actress(money){
+    if(money==1){
+      hero.src = "nayra.webp"
+
+    }else if(money==2){
+      hero.src = "professor.jpg"
+    }else if(money==3){
+      hero.src = "hesangi.webp"
+    }
+    }
+  
+
+  </script>
